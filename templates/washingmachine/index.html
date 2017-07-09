@@ -1,4 +1,243 @@
-<html>
-<a href="{% url 'order' %}">表单</a>
-<a href="{% url 'status' %}">查看订单状态</a>
-</html>
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh_cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="Eoncci宜叁集 洗衣共享">
+    <meta name="author" content="ouYong">
+
+    <title>Eoncci宜叁集 洗衣共享</title>
+    <link href="{% static 'assets/css/application.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/img/logo.png' %}" rel="shortcut icon">
+  </head>
+  <body class="index" id="to-top">
+
+    <nav class="side-nav" role="navigation">
+
+      <ul class="nav-side-nav">
+        <li><a href="#section-1"></a></li>
+        <li><a href="#section-2"></a></li>
+        <li><a href="#section-3"></a></li>
+        <li><a href="#to-top"></a></li>
+      </ul>
+      
+    </nav> 
+
+    <header class="jumbotron" role="banner">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-md-7">
+
+            <!-- Logo -->
+            <figure class="text-center">
+              <a href="/index.html">
+                <img class="img-logo" src="./assets/logo.png" alt="Eoncci">
+              </a>
+            </figure> 
+
+            <!-- Title -->
+            <h1>Eoncci洗衣共享</h1>
+
+            <!-- Sub title -->
+            <p>免费预约租凭洗衣机</p>
+
+            <!-- Button -->
+            <p>
+              <a class="btn btn-danger" href="#section-1">了解更多</a>
+            </p> <!-- /.btn-app-store -->
+
+          </div> <!-- /.col-md-7 -->
+
+          <div class="col-md-5">
+
+            <!-- Images showcase -->
+            <figure>
+              <img class="img-iPhone" src="./assets/1.jpg" alt="出租洗衣机啦~">
+            </figure>
+
+          </div> <!-- /.col-md-5 -->
+          
+        </div> <!-- /.row -->
+        
+      </div> <!-- /.container -->
+
+    </header> <!-- /.jumbotron -->
+
+
+
+    <!-- Services -->
+    <section class="services-section" id="section-1">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-md-4 col-services">
+            
+            <!-- Icons -->
+            <figure>
+              <img class="img-services" src="./assets/flag.png" alt="卫生">
+            </figure>
+
+            <!-- Title -->
+            <h4>卫生</h4>
+
+            <!-- Description -->
+            <p>专业技术人员定期清洗洗衣机</p>
+
+          </div> <!-- /.col-md-4 -->
+
+          <div class="col-md-4 col-services">
+            
+            <!-- Icons -->
+            <figure>
+              <img class="img-services" src="./assets/search.png" alt="价格">
+            </figure>
+
+            <!-- Title -->
+            <h4>价格</h4>
+
+            <!-- Description -->
+            <p>打破市场的低廉价格</p>
+
+          </div> <!-- /.col-md-4 -->
+
+          <div class="col-md-4 col-services">
+            
+            <!-- Icons -->
+            <figure>
+              <img class="img-services img-margin" src="./assets/world-map.png" alt="设备">
+            </figure>
+
+            <!-- Title -->
+            <h4>设备</h4>
+
+            <!-- Description -->
+            <p>优秀的洗衣机资源</p>
+
+          </div> <!-- /.col-md-4 -->
+          
+        </div> <!-- /.row -->
+        
+      </div> <!-- /.container -->
+      
+    </section> <!-- /.services-section -->
+
+
+
+
+    <!-- Features -->
+    <section class="features-section" >
+
+      <div class="container">
+
+        <div class="row" id="section-2">
+
+          <div class="col-md-5 col-features text-center">
+            
+            <!-- Images showcase -->
+            <figure><img class="img-iPhone" src="./assets/2.jpg" alt="洗衣机展示图"></figure>
+
+          </div> <!-- /.col-md-5 -->
+
+          <div class="col-md-7 col-features features-content">
+            
+            <!-- Title -->
+            <h3 id="title-1">租赁价格</h3>
+
+            <!-- Description -->
+            <p>需交付押金￥200</p>
+            <p>一年：￥100</p>
+            <p>两年：￥180（每年￥90）</p>
+            <p>三年：￥255（每年￥85）</p>
+            <p>四年：￥320（每年￥80）</p>
+
+            <p>
+              <a class="btn btn-danger" href="./order.html">立即免费预约</a>
+            </p>
+            <p>
+              <a class="btn btn-danger" href="http://wpa.qq.com/msgrd?v=3&uin=2937564428&site=qq&menu=yes" target="_blank">在线咨询</a> &nbsp;
+              <a class="btn btn-danger-border" href="tel:13295105970">呼叫客服</a>
+            </p>
+
+            <p>
+              <strong>客服热线</strong> 
+              <br>132-9510-5970
+            </p>
+
+          </div> <!-- /.col-md-7 -->
+          
+        </div> <!-- /.row -->
+
+
+
+
+        <div class="row media-screen-800 text-center" id="section-3">
+
+          <div class="col-features features-content">
+            <h3 id="title-2">洗衣机介绍</h3>
+          </div>
+
+          <div class="row col-features ">
+            <!-- Images showcase -->
+            <figure>
+              <img class="img-iPhone margin-top margin-screen-800" src="./assets/wm1.jpeg">
+              <img class="img-iPhone margin-top margin-screen-800" src="./assets/wm2.jpeg">
+              <img class="img-iPhone margin-top margin-screen-800" src="./assets/wm3.jpeg">
+              <img class="img-iPhone margin-top margin-screen-800" src="./assets/wm4.jpeg">
+              <img class="img-iPhone margin-top margin-screen-800" src="./assets/wm5.jpeg">
+              <img class="img-iPhone margin-top margin-screen-800" src="./assets/wm6.jpeg">
+              <img class="img-iPhone margin-top margin-screen-800" src="./assets/wm7.jpeg">
+              <img class="img-iPhone margin-top margin-screen-800" src="./assets/wm8.jpeg">
+              <img class="img-iPhone margin-top margin-screen-800" src="./assets/wm9.gif">
+              <img class="img-iPhone margin-top margin-screen-800" src="./assets/wm10.jpeg">
+              <img class="img-iPhone margin-top margin-screen-800" src="./assets/wm11.jpeg">
+            
+            </figure>
+
+          </div> <!-- /.col-md-5 -->
+          
+        </div> <!-- /.row -->
+
+      </div> <!-- /.container -->
+
+    </section> <!-- /.features-section -->
+
+
+    <!-- Footer -->
+    <footer class="footer-section text-center" role="contentinfo">
+
+      <div class="container">
+
+        <div class="row col-footer">
+            
+            <!-- Footer 1 -->
+            <section>
+              <p><a href="http://weibo.com/u/6280542508" target="_blank">Eoncci宜叁集</a>官方微博</p>
+            </section>
+
+            <!-- AddThis Button -->
+            <ul class="addthis_toolbox addthis_default_style">
+
+              <li><a href="http://weibo.com/u/6280542508"><img src="./assets/WB.png" alt="Weibo"></a></li>
+
+            </ul> <!-- /.addthis_toolbox -->
+
+          
+        </div> <!-- /.row -->
+
+      </div> <!-- /.container -->
+
+    </footer> <!-- /.footer-section -->
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'assets/js/jquery-2.1.0.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/application.js' %}"></script>
+
+</body></html>

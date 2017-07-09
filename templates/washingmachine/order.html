@@ -1,13 +1,150 @@
-<html>
-<form action="wm_order" method="post">
-    {% csrf_token %}
-    <input type="text" name="tel" class="tel" placeholder="电话">
-    <input type="text" name="name" class="username" placeholder="姓名">
-    <input type="text" name="address" class="address" placeholder="住址">
-    <select type="text" name="product">
-        <option value="1">一年：200</option>
-        <option value="2">两年：400</option>
-    </select>
-    <button type="submit">下单</button>
-</form>
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+
+  <!-- Meta -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Eoncci宜叁集 洗衣共享">
+  <meta name="keywords" content="Eoncci宜叁集 洗衣共享">
+  <meta name="author" content="ouYong">
+
+  <!-- Title -->
+  <title>Eoncci宜叁集 洗衣共享 预约</title>
+    <link href="{% static 'assets/css/application.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/img/logo.png' %}" rel="shortcut icon">
+</head>
+
+<body class="sign-in-up" id="to-top">
+
+  <!-- Sign In/Sign Up section -->
+  <section class="sign-in-up-section">
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-12">
+
+          <!-- Logo -->
+          <figure class="text-center">
+            <a href="./index.html"><img class="img-logo" src="./assets/logo.png" alt=""></a>Eoncci宜叁集 洗衣共享
+          </figure>
+          <!-- /.text-center -->
+
+        </div>
+        <!-- /.col-md-12 -->
+
+      </div>
+      <!-- /.row -->
+
+
+
+
+      <section class="sign-in-up-content">
+
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <h4 class="text-center">请填写信息</h4>
+
+
+            <form class="sign-in-up-form" role="form">
+
+              <div class="form-group">
+                <input type="text" class="form-control" id="tel" placeholder="请输入电话号码">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="name" placeholder="请输入姓名">
+              </div>
+              <div class="form-group chooseRoom">
+                <p>请选择房间号：</p>
+
+                <select class="form-control col-xs-3">
+                  <option>文荟</option>
+                  <option>文萃</option>
+                  <option>文星</option>
+                </select>
+                <select class="form-control col-xs-3">
+                  <option>1栋</option>
+                  <option>2栋</option>
+                  <option>3栋</option>
+                </select>
+                <select class="form-control col-xs-3">
+                  <option>1层</option>
+                  <option>2层</option>
+                  <option>3层</option>
+                </select>
+                <select class="form-control col-xs-3">
+                  <option>001</option>
+                  <option>002</option>
+                  <option>003</option>
+                </select>
+
+              </div>
+              <div class="form-group">
+                <p>请选择租赁时间：</p>
+
+                <select class="form-control">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+
+              <!-- Button -->
+              <button class="btn btn-success btn-block" type="submit">预约</button>
+
+              <!-- Checkbox -->
+              <section class="text-center">
+                <div class="checkbox">
+                  <label>
+                      <input type="checkbox" checked=""> 请确保已阅读：<a href="#fakelinks">租赁条约</a>
+                  </label>
+                </div>
+                <!-- /.checkbox -->
+              </section>
+              <!-- /.text-center -->
+
+              <section class="sign-in-up-links text-center">
+                <p>已经预约过了？ <span class="sep">–</span> <a href="./status.html">查看申请状态</a></p>
+              </section>
+
+
+              <section class="text-center">
+
+                <p>请放心.<br> 我们不会泄露您的任何信息 :)</p>
+
+              </section>
+
+            </form>
+
+          </div>
+          <!-- /.col-md-12 -->
+
+        </div>
+        <!-- /.row -->
+
+      </section>
+      <!-- /.sign-in-up-content -->
+
+
+
+    </div>
+    <!-- /.container -->
+
+  </section>
+  <!-- /.sign-in-up-section -->
+
+
+  <script src="{% static 'assets/js/jquery-2.1.0.min.js' %}"></script>
+  <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets/js/application.js' %}"></script>
+</body>
+
 </html>

@@ -1,13 +1,83 @@
-<html>
-<form>
-    {% csrf_token %}
-    <input type="text" name="tel" class="tel" placeholder="电话">
-    <input type="text" name="name" class="username" placeholder="姓名">
-    <input type="text" name="address" class="address" placeholder="住址">
-    <select type="text" name="product">
-        <option value="1">一年：200</option>
-        <option value="2">两年：400</option>
-    </select>
-    <button type="submit">下单</button>
-</form>
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh_cn">
+<head>
+
+    <!-- Meta -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eoncci宜叁集 洗衣共享">
+    <meta name="keywords" content="Eoncci宜叁集 洗衣共享">
+    <meta name="author" content="ouYong">
+
+    <!-- Title -->
+    <title>Eoncci宜叁集 洗衣共享 查询状态</title>
+    <link href="{% static 'assets/css/application.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/img/logo.png' %}" rel="shortcut icon">
+  </head>
+
+<body class="sign-in-up" id="to-top">
+
+  <!-- Sign In/Sign Up section -->
+  <section class="sign-in-up-section">
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-12">
+
+          <!-- Logo -->
+          <figure class="text-center">
+            <a href="./index.html"><img class="img-logo" src="./assets/logo.png" alt=""></a>Eoncci宜叁集 洗衣共享
+          </figure>
+          <!-- /.text-center -->
+
+        </div>
+        <!-- /.col-md-12 -->
+
+      </div>
+      <!-- /.row -->
+
+
+
+
+      <section class="sign-in-up-content">
+
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <h4 class="text-center">查询预约状态</h4>
+
+            <div class="form-group getstatus">
+              <input type="text" class="form-control" id="inputPassword2" placeholder="请输入电话号码查询">
+              <button type="submit" class="btn btn-danger">确定</button>
+            </div>
+
+              <p>正在派送中，预计到达时间为：2017.9.1</p>
+              <p>房间地址为：文荟 1栋 1层 010</p>
+              <p>租赁时间为：2年</p>
+              <p>联系人姓名：李白</p>
+          </div>
+          <!-- /.col-md-12 -->
+
+        </div>
+        <!-- /.row -->
+
+      </section>
+      <!-- /.sign-in-up-content -->
+
+    </div>
+    <!-- /.container -->
+
+  </section>
+  <!-- /.sign-in-up-section -->
+
+
+  <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'assets/js/jquery-2.1.0.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/application.js' %}"></script>
+</body>
 </html>
