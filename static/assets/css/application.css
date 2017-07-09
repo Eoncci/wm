@@ -6316,3 +6316,10 @@ tbody.collapse.in {
   width: calc(100% - 100px);
   vertical-align: middle;
 }
+
+.addthis_toolbox {
+  padding: 0;
+}
+.addthis_toolbox li{
+  list-style: none;
+}
