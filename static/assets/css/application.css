@@ -6086,8 +6086,8 @@ tbody.collapse.in {
   .col-features {
     width: 90%;
   }
-/*}
-.col-features.features-content {
+}
+/*.col-features.features-content {
   padding-top: 100px;
 }*/
 @media screen and (max-width: 800px) {
