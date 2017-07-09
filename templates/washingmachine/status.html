@@ -1,0 +1,13 @@
+<html>
+<form>
+    {% csrf_token %}
+    <input type="text" name="tel" class="tel" placeholder="电话">
+    <input type="text" name="name" class="username" placeholder="姓名">
+    <input type="text" name="address" class="address" placeholder="住址">
+    <select type="text" name="product">
+        <option value="1">一年：200</option>
+        <option value="2">两年：400</option>
+    </select>
+    <button type="submit">下单</button>
+</form>
+</html>
