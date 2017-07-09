@@ -19,7 +19,6 @@ class Order(models.Model):
     status = models.CharField(max_length=45)
 
     class Meta:
-        managed = False
         db_table = 'order'
 
 
@@ -29,7 +28,6 @@ class Userinfo(models.Model):
     address = models.CharField(max_length=750)
 
     class Meta:
-        managed = False
         db_table = 'userinfo'
 
 
@@ -38,5 +36,4 @@ class Wm(models.Model):
     status = models.CharField(max_length=45)
 
     class Meta:
-        managed = False
         db_table = 'wm'
