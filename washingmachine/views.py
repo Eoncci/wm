@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from .models import *
-from .forms import OrderForm
+from .forms import OrderForm, QueryForm
 import json
 import uuid
 import datetime
@@ -34,7 +34,26 @@ def wm_order(request):
                            wmid=1)
             u1.save()
             _order.save()
-            return HttpResponse('success!')
+            return render(request, 'washingmachine/order_success.html')
         return HttpResponse(json.dumps(order_form.errors))
     else:
-        return HttpResponse('error!')
+        return HttpResponse(handle_error('error'))
+
+
+def query(request):
+    if request.method == 'POST':
+        query_form = QueryForm(request.POST)
+        if query_form.is_valid():
+            try:
+                _temp = Order.objects.get(tel=query_form.cleaned_data['tel'])
+                return HttpResponse(_temp.to_json())
+            except models.ObjectDoesNotExist:
+                return HttpResponse(handle_error('tel no exit'))
+        else:
+            return HttpResponse(json.dumps(query_form.errors))
+    else:
+        return HttpResponse(handle_error('error'))
+
+
+def handle_error(error: str):
+    return json.dumps({'error': error})
