@@ -6086,8 +6086,8 @@ tbody.collapse.in {
   .col-features {
     width: 90%;
   }
-/*}
-.col-features.features-content {
+}
+/*.col-features.features-content {
   padding-top: 100px;
 }*/
 @media screen and (max-width: 800px) {
@@ -6315,4 +6315,11 @@ tbody.collapse.in {
   display: inline-block;
   width: calc(100% - 100px);
   vertical-align: middle;
+}
+
+.addthis_toolbox {
+  padding: 0;
+}
+.addthis_toolbox li{
+  list-style: none;
 }
