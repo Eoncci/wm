@@ -24,6 +24,12 @@ def wm_order(request):
     if request.method == 'POST':
         order_form = OrderForm(request.POST)
         if order_form.is_valid():
+            try:
+                Order.objects.get(tel=order_form.cleaned_data['tel'])
+                return HttpResponse(handle_error('you already have an order'))
+            except models.ObjectDoesNotExist:
+                pass
+
             u1 = Userinfo(tel=order_form.cleaned_data['tel'],
                           name=order_form.cleaned_data['name'],
                           address=order_form.cleaned_data['address'])
@@ -57,3 +63,12 @@ def query(request):
 
 def handle_error(error: str):
     return json.dumps({'error': error})
+
+
+def handle_objects_get(func):
+    def func1():
+        try:
+            return func()
+        except (models.ObjectDoesNotExist, models.MultipleObjectsReturned):
+            return False
+    return func1
