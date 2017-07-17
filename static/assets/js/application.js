@@ -122,7 +122,7 @@ $(function() {
               <p>联系人电话：'+ res.tel +'</p>\
               <p>租赁时间为：'+ res.start.substring(0, 10) + ' 至 ' + res.end.substring(0, 10) +'</p></div>'
             );
-        $('#statusinfo').append(temp);
+        $('#statusinfo').html(temp);
         temp.fadeIn();
       });
   });
