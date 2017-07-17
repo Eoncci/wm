@@ -110,7 +110,7 @@ $(function() {
         var temp = $(
              '<div class="dn"><p>正在派送中，</p>\
               <p>联系人电话：'+ res.tel +'</p>\
-              <p>租赁时间为：'+ res.start + ' - ' + res.end +'</p></div>'
+              <p>租赁时间为：'+ res.start.substring(0, 10) + ' - ' + res.end.substring(0, 10) +'</p></div>'
             );
         $('#statusinfo').append(temp);
         temp.fadeIn();
