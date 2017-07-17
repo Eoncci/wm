@@ -34,7 +34,7 @@ $(function() {
   // 预约申请
   $('#signform').submit(function (e) {
       e.preventDefault();
-      if( !checkPhone($('#tel').value()) ){
+      if( !checkPhone($('#tel').val()) ){
           swal({
             html: true ,
             title: '提示',
@@ -45,7 +45,7 @@ $(function() {
           $('#tel').focus();
           return false;
       }
-      if( !$.trim($('#name').value()) ){
+      if( !$.trim($('#name').val()) ){
           swal({
             html: true ,
             title: '提示',
@@ -56,7 +56,7 @@ $(function() {
           $('#name').focus();
           return false;
       }
-      if( !$.trim($('#address').value()) ){
+      if( !$.trim($('#address').val()) ){
           swal({
             html: true ,
             title: '提示',
@@ -107,7 +107,6 @@ $(function() {
       }
       $.post('/washingmachine/query', $('#statusform').serialize() ,function (res) {
         res = JSON.parse(res);
-        console.log(res);
         var temp = $(
              '<div class="dn"><p>正在派送中，</p>\
               <p>联系人电话：'+ res.tel +'</p>\
