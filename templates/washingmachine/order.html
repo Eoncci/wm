@@ -13,8 +13,9 @@
 
   <!-- Title -->
   <title>Eoncci宜叁集 洗衣共享 预约</title>
-    <link href="{% static 'assets/css/application.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/img/logo.png' %}" rel="shortcut icon">
+  <link href="{% static 'assets/css/sweetalert.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/application.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/img/logo.png' %}" rel="shortcut icon">
 </head>
 
 <body class="sign-in-up" id="to-top">
@@ -63,7 +64,7 @@
               </div>
               <div class="form-group">
                 <p>请输入地址：</p>
-                <input type="text" class="form-control" name="address" id="address">
+                <input type="text" class="form-control" name="address" id="address" placeholder="例如：文荟570">
               </div>
               <div class="form-group">
                 <p>请选择租赁时间：</p>
@@ -121,6 +122,7 @@
 
   <script src="{% static 'assets/js/jquery-2.1.0.min.js' %}"></script>
   <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets/js/sweetalert.min.js' %}"></script>
   <script src="{% static 'assets/js/application.js' %}"></script>
 </body>
 

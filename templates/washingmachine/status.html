@@ -12,6 +12,7 @@
 
     <!-- Title -->
     <title>Eoncci宜叁集 洗衣共享 查询状态</title>
+    <link href="{% static 'assets/css/sweetalert.css' %}" rel="stylesheet"> 
     <link href="{% static 'assets/css/application.css' %}" rel="stylesheet">
     <link href="{% static 'assets/img/logo.png' %}" rel="shortcut icon">
   </head>
@@ -39,9 +40,6 @@
       </div>
       <!-- /.row -->
 
-
-
-
       <section class="sign-in-up-content">
 
         <div class="row">
@@ -53,7 +51,7 @@
             <div class="form-group getstatus">
                 <form action="query" method="post" id="statusform">
                     {% csrf_token %}
-                    <input type="text" name="tel" class="form-control" id="inputPassword2" placeholder="请输入电话号码查询">
+                    <input type="text" name="tel" class="form-control" id="tel" placeholder="请输入电话号码查询">
                     <button type="submit" class="btn btn-danger">确定</button>
                 </form>
             </div>
@@ -78,6 +76,7 @@
   <!-- Placed at the end of the document so the pages load faster -->
     <script src="{% static 'assets/js/jquery-2.1.0.min.js' %}"></script>
     <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/sweetalert.min.js' %}"></script>
     <script src="{% static 'assets/js/application.js' %}"></script>
 </body>
 </html>
