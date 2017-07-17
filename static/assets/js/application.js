@@ -94,7 +94,7 @@ $(function() {
   // 获取预约状态
   $('#statusform').submit(function (e) {
       e.preventDefault();
-      if( !checkPhone($('#tel').value()) ){
+      if( !checkPhone($('#tel').val()) ){
           swal({
             html: true ,
             title: '提示',
@@ -110,7 +110,6 @@ $(function() {
         var temp = $(
              '<div class="dn"><p>正在派送中，</p>\
               <p>联系人电话：'+ res.tel +'</p>\
-              <p>房间地址为：</p>\
               <p>租赁时间为：'+ res.start + ' - ' + res.end +'</p></div>'
             );
         $('#statusinfo').append(temp);
