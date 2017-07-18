@@ -18,9 +18,8 @@ class Order(models.Model):
     wmid = models.CharField(max_length=15)
     status = models.CharField(max_length=45)
 
-    def to_json(self):
-        import json
-        return json.dumps(dict([(attr, getattr(self, attr)) for attr in [f.name for f in self._meta.fields]]))
+    def to_dict(self):
+        return dict([(attr, getattr(self, attr)) for attr in [f.name for f in self._meta.fields]])
 
     class Meta:
         db_table = 'order'
