@@ -13,8 +13,9 @@
 
   <!-- Title -->
   <title>Eoncci宜叁集 洗衣共享 预约</title>
-    <link href="{% static 'assets/css/application.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/img/logo.png' %}" rel="shortcut icon">
+  <link href="{% static 'assets/css/sweetalert.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/application.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/img/logo.png' %}" rel="shortcut icon">
 </head>
 
 <body class="sign-in-up" id="to-top">
@@ -30,7 +31,7 @@
 
           <!-- Logo -->
           <figure class="text-center">
-            <a href="./index.html"><img class="img-logo" src="{% static 'assets/img/logo.png' %}" alt=""></a>Eoncci宜叁集 洗衣共享
+            <a href="{% url 'index' %}"><img class="img-logo" src="{% static 'assets/img/logo.png' %}" alt=""></a>Eoncci宜叁集 洗衣共享
           </figure>
           <!-- /.text-center -->
 
@@ -52,7 +53,7 @@
             <h4 class="text-center">请填写信息</h4>
 
 
-            <form class="sign-in-up-form" role="form" action="wm_order" method="post">
+            <form class="sign-in-up-form" role="form" action="wm_order" method="post" id="signform">
               {% csrf_token %}
 
               <div class="form-group">
@@ -67,10 +68,10 @@
               <div class="form-group">
                 <p>请选择租赁时间：</p>
                 <select class="form-control" name="product">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
+                  <option value="1">一年：￥100</option>
+                  <option value="2">两年：￥180（￥90/年）</option>
+                  <option value="3">三年：￥255（￥85/年）</option>
+                  <option value="4">四年：￥320（￥80/年）</option>
                 </select>
               </div>
 
@@ -98,7 +99,6 @@
                 <p>请放心.<br> 我们不会泄露您的任何信息 :)</p>
 
               </section>
-
             </form>
 
           </div>
@@ -121,6 +121,7 @@
 
   <script src="{% static 'assets/js/jquery-2.1.0.min.js' %}"></script>
   <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets/js/sweetalert.min.js' %}"></script>
   <script src="{% static 'assets/js/application.js' %}"></script>
 </body>
 
