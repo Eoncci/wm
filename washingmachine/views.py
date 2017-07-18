@@ -26,7 +26,7 @@ def wm_order(request):
         if order_form.is_valid():
             try:
                 Order.objects.get(tel=order_form.cleaned_data['tel'])
-                return HttpResponse(handle_error('you already have an order'))
+                return HttpResponse(handle_result(data={}, _status=0, message='you already have an order!'))
             except models.ObjectDoesNotExist:
                 pass
 
@@ -36,14 +36,15 @@ def wm_order(request):
             _order = Order(id=uuid.uuid1(),
                            tel=order_form.cleaned_data['tel'],
                            start=datetime.datetime.now(),
-                           end=datetime.datetime.now()+datetime.timedelta(days=365*int(order_form.cleaned_data['product'])),
+                           end=datetime.datetime.now() + datetime.timedelta(
+                               days=365*int(order_form.cleaned_data['product'])),
                            wmid=1)
             u1.save()
             _order.save()
-            return render(request, 'washingmachine/order_success.html')
+            return HttpResponse(handle_result(data={}, _status=1, message=''))
         return HttpResponse(json.dumps(order_form.errors))
     else:
-        return HttpResponse(handle_error('error'))
+        return HttpResponse(handle_result(data={}, _status=0, message='wrong request!'))
 
 
 def query(request):
@@ -52,23 +53,22 @@ def query(request):
         if query_form.is_valid():
             try:
                 _temp = Order.objects.get(tel=query_form.cleaned_data['tel'])
-                return HttpResponse(_temp.to_json())
+                return HttpResponse(handle_result(data=_temp.to_dict(), _status=1, message=''))
             except models.ObjectDoesNotExist:
-                return HttpResponse(handle_error('tel no exit'))
+                return HttpResponse(handle_result(data={}, _status=0, message='tel not exit!'))
         else:
             return HttpResponse(json.dumps(query_form.errors))
     else:
-        return HttpResponse(handle_error('error'))
+        return HttpResponse(handle_result(data={}, _status=0, message='wrong request!'))
 
 
 def handle_error(error: str):
     return json.dumps({'error': error})
 
 
-def handle_objects_get(func):
-    def func1():
-        try:
-            return func()
-        except (models.ObjectDoesNotExist, models.MultipleObjectsReturned):
-            return False
-    return func1
+def handle_result(data: dict, _status: int, message: str):
+    return json.dumps({'data': data,
+                       'status': _status,
+                       'message': {'zh': message,
+                                   'en': message}
+                       })
