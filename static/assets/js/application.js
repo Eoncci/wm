@@ -69,7 +69,7 @@ $(function() {
       }
 
       $.post('/washingmachine/wm_order', $('#signform').serialize() ,function (res) {
-        console.log(res);
+        res = JSON.parse(res);
         if(res.status == 1){
           swal({ 
             html: true ,
