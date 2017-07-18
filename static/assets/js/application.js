@@ -70,7 +70,7 @@ $(function() {
 
       $.post('/washingmachine/wm_order', $('#signform').serialize() ,function (res) {
         console.log(res);
-        if(res.match('success')){
+        if(res.status == 1){
           swal({ 
             html: true ,
             title: '预约成功',
@@ -82,7 +82,7 @@ $(function() {
           swal({
             html: true ,
             title: '提示',
-            text: JSON.parse(res).error, 
+            text: res.message.zh, 
             type: 'warning',
             confirmButtonText: '确定', 
           });
@@ -107,26 +107,24 @@ $(function() {
       }
       $.post('/washingmachine/query', $('#statusform').serialize() ,function (res) {
         res = JSON.parse(res);
-        if(res.error){
-          swal({
-            html: true ,
-            title: '提示',
-            text: res.error, 
-            type: 'warning',
-            confirmButtonText: '确定', 
-          });
-          return false;
+        if(res.status == 1){
+          var temp = $(
+              '<div class="dn"><p>洗衣机正在派送中，请保持电话畅通，我们的安装人员将主动联系您!</p>\
+                <p>联系人电话：'+ res.tel +'</p>\
+                <p>租赁时间为：'+ res.start.substring(0, 10) + ' 至 ' + res.end.substring(0, 10) +'</p></div>'
+              );
+          $('#statusinfo').html(temp);
+          temp.fadeIn();
+        }else{
+            swal({
+              html: true ,
+              title: '提示',
+              text: res.message.zh, 
+              type: 'warning',
+              confirmButtonText: '确定', 
+            });
         }
-        var temp = $(
-             '<div class="dn"><p>洗衣机正在派送中，请保持电话畅通，我们的安装人员将主动联系您!</p>\
-              <p>联系人电话：'+ res.tel +'</p>\
-              <p>租赁时间为：'+ res.start.substring(0, 10) + ' 至 ' + res.end.substring(0, 10) +'</p></div>'
-            );
-        $('#statusinfo').html(temp);
-        temp.fadeIn();
       });
   });
-
-
 
 });
