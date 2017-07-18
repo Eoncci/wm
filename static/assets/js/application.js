@@ -110,8 +110,8 @@ $(function() {
         if(res.status == 1){
           var temp = $(
               '<div class="dn"><p>洗衣机正在派送中，请保持电话畅通，我们的安装人员将主动联系您!</p>\
-                <p>联系人电话：'+ res.tel +'</p>\
-                <p>租赁时间为：'+ res.start.substring(0, 10) + ' 至 ' + res.end.substring(0, 10) +'</p></div>'
+                <p>联系人电话：'+ res.data.tel +'</p>\
+                <p>租赁时间为：'+ res.data.start.substring(0, 10) + ' 至 ' + res.data.end.substring(0, 10) +'</p></div>'
               );
           $('#statusinfo').html(temp);
           temp.fadeIn();
