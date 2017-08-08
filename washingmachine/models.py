@@ -16,7 +16,7 @@ class Order(models.Model):
     start = models.CharField(max_length=45)
     end = models.CharField(max_length=45)
     wmid = models.CharField(max_length=15)
-    status = models.CharField(max_length=45)
+    status = models.CharField(max_length=45, default='init')
 
     def to_dict(self):
         return dict([(attr, getattr(self, attr)) for attr in [f.name for f in self._meta.fields]])
@@ -40,3 +40,13 @@ class Wm(models.Model):
 
     class Meta:
         db_table = 'wm'
+
+
+class Code(models.Model):
+    tel = models.CharField(primary_key=True, max_length=15)
+    code = models.CharField(max_length=15)
+    result = models.CharField(max_length=150, null=True)
+    time = models.DateTimeField()
+
+    class Meta:
+        db_table = 'code'

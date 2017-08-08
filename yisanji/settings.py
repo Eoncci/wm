@@ -22,6 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '%qh!dhzgleq*+2!&^1^1y8qqe05nf8fz=0$fjwnapqny@f13^h'
 
+MESSAGE_URL='http://sh2.ipyy.com/smsJson.aspx?action=send&userid=eoncci' \
+            '&account=jlf60&password=ab1256022&mobile={0}&content={1}&sendTime=&extno='
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -116,7 +119,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
