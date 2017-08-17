@@ -28,7 +28,7 @@ MESSAGE_URL='http://sh2.ipyy.com/smsJson.aspx?action=send&userid=eoncci' \
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['139.199.189.124', '127.0.0.1']
+ALLOWED_HOSTS = ['139.199.189.124', '127.0.0.1', 'www.yisanji.com']
 
 
 # Application definition
