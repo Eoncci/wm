@@ -27,41 +27,39 @@ def status(request):
 
 @require_http_methods(["POST"])
 def wm_order(request):
-    if request.method == 'POST':
-        order_form = OrderForm(request.POST)
+    order_form = OrderForm(request.POST)
 
-        if request.POST.get('code') and order_form.is_valid():
-            code = request.POST.get('code')
-            try:
-                _code = Code.objects.get(tel=order_form.cleaned_data['tel'])
-                if code == _code.code:
-                    pass
-                else:
-                    return HttpResponse(handle_result(data={}, _status=0, message='you input the wrong code'))
-            except models.ObjectDoesNotExist:
-                return HttpResponse(handle_result(data={}, _status=0, message='you did not have code'))
+    # if request.POST.get('code') and order_form.is_valid():
+    if order_form.is_valid():
+        # code = request.POST.get('code')
+        # try:
+        #     _code = Code.objects.get(tel=order_form.cleaned_data['tel'])
+        #     if code == _code.code:
+        #         pass
+        #     else:
+        #         return HttpResponse(handle_result(data={}, _status=0, message='you input the wrong code'))
+        # except models.ObjectDoesNotExist:
+        #     return HttpResponse(handle_result(data={}, _status=0, message='you did not have code'))
 
-            try:
-                Order.objects.get(tel=order_form.cleaned_data['tel'])
-                return HttpResponse(handle_result(data={}, _status=0, message='you already have an order!'))
-            except models.ObjectDoesNotExist:
-                pass
+        try:
+            Order.objects.get(tel=order_form.cleaned_data['tel'])
+            return HttpResponse(handle_result(data={}, _status=0, message='you already have an order!'))
+        except models.ObjectDoesNotExist:
+            pass
 
-            u1 = Userinfo(tel=order_form.cleaned_data['tel'],
-                          name=order_form.cleaned_data['name'],
-                          address=order_form.cleaned_data['address'])
-            _order = Order(id=uuid.uuid1(),
-                           tel=order_form.cleaned_data['tel'],
-                           start=datetime.datetime.now(),
-                           end=datetime.datetime.now() + datetime.timedelta(
-                               days=365*int(order_form.cleaned_data['product'])),
-                           wmid=1)
-            u1.save()
-            _order.save()
-            return HttpResponse(handle_result(data={}, _status=1, message=''))
-        return HttpResponse(json.dumps(order_form.errors))
-    else:
-        return HttpResponse(handle_result(data={}, _status=0, message='wrong request!'))
+        u1 = Userinfo(tel=order_form.cleaned_data['tel'],
+                      name=order_form.cleaned_data['name'],
+                      address=order_form.cleaned_data['address'])
+        _order = Order(id=uuid.uuid1(),
+                       tel=order_form.cleaned_data['tel'],
+                       start=datetime.datetime.now(),
+                       end=datetime.datetime.now() + datetime.timedelta(
+                           days=365*int(order_form.cleaned_data['product'])),
+                       wmid=1)
+        u1.save()
+        _order.save()
+        return HttpResponse(handle_result(data={}, _status=1, message=''))
+    return HttpResponse(json.dumps(order_form.errors))
 
 
 @require_http_methods(["GET"])
@@ -115,7 +113,6 @@ def query(request):
             return HttpResponse(handle_result(data={}, _status=0, message='tel not exit!'))
     else:
         return HttpResponse(json.dumps(query_form.errors))
-
 
 
 def handle_error(error: str):
