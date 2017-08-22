@@ -19,7 +19,7 @@
       <ul class="nav-side-nav">
         <li><a href="#section-1" data-toggle="tooltip" title="特色" data-placement="left"></a></li>
         <li><a href="#section-2" data-toggle="tooltip" title="价格" data-placement="left"></a></li>
-        <li><a href="#section-3" data-toggle="tooltip" title="洗衣机介绍" data-placement="left"></a></li>
+        <!-- <li><a href="#section-3" data-toggle="tooltip" title="洗衣机介绍" data-placement="left"></a></li> -->
         <li><a href="#to-top" data-toggle="tooltip" title="返回顶部" data-placement="left"></a></li>
       </ul>
       
@@ -78,32 +78,26 @@
         <div class="row">
 
           <div class="col-md-4 col-services">
-            
-            <!-- Icons -->
             <figure>
               <img class="img-services" src="{% static 'assets/img/flag.png' %}" alt="卫生">
             </figure>
-
-            <!-- Title -->
             <h4>卫生</h4>
 
-            <!-- Description -->
-            <p>专业技术人员定期清洗洗衣机</p>
-
-          </div> <!-- /.col-md-4 -->
+          </div> 
 
           <div class="col-md-4 col-services">
             
-            <!-- Icons -->
             <figure>
               <img class="img-services" src="{% static 'assets/img/search.png' %}" alt="价格">
             </figure>
 
             <!-- Title -->
-            <h4>价格</h4>
+            <h4>服务</h4>
 
             <!-- Description -->
-            <p>打破市场的低廉价格</p>
+            <p>-定期清洁服务</p>            
+            <p>-上门维修服务</p>
+            <p>-大物件代洗家政服务</p>
 
           </div> <!-- /.col-md-4 -->
 
@@ -119,6 +113,9 @@
 
             <!-- Description -->
             <p>优秀的洗衣机资源</p>
+            <p>-我们的洗衣机均收购于 学生宿舍</p>
+            <p>-使用时间低于两年</p>
+            <p>-经专业人士检测评估仍可长期正常运行（一般全自动洗衣机的寿命为10年）</p>
 
           </div> <!-- /.col-md-4 -->
           
@@ -151,11 +148,11 @@
             <h3 id="title-1">租赁价格</h3>
 
             <!-- Description -->
-            <p>需交付押金￥200</p>
-            <p>一年：￥100</p>
-            <p>两年：￥180（￥90/年）</p>
-            <p>三年：￥255（￥85/年）</p>
-            <p>四年：￥320（￥80/年）</p>
+            <p>需交付押金200元</p>
+            <p>一年100元</p>
+            <p>两年180元（90元/年）</p>
+            <p>三年255元（85元/年）</p>
+            <p>四年320元（80元/年）</p>
 
             <p>
               <a class="btn btn-danger" href="{% url 'order' %}">立即免费预约</a>
@@ -180,31 +177,35 @@
         <div class="row media-screen-800 text-center" id="section-3">
 
           <div class="col-features features-content">
-            <h3 id="title-2">洗衣机介绍</h3>
+            <h3 id="title-2">详细介绍</h3>
           </div>
 
           <div class="row col-features ">
-            <!-- Images showcase -->
-            <figure>
-              <img class="img-iPhone margin-top margin-screen-800" src="{% static 'assets/img/wm1.jpeg' %}">
-              <img class="img-iPhone margin-top margin-screen-800" src="{% static 'assets/img/wm2.jpeg' %}">
-              <img class="img-iPhone margin-top margin-screen-800" src="{% static 'assets/img/wm3.jpeg' %}">
-              <img class="img-iPhone margin-top margin-screen-800" src="{% static 'assets/img/wm4.jpeg' %}">
-              <img class="img-iPhone margin-top margin-screen-800" src="{% static 'assets/img/wm5.jpeg' %}">
-              <img class="img-iPhone margin-top margin-screen-800" src="{% static 'assets/img/wm6.jpeg' %}">
-              <img class="img-iPhone margin-top margin-screen-800" src="{% static 'assets/img/wm7.jpeg' %}">
-              <img class="img-iPhone margin-top margin-screen-800" src="{% static 'assets/img/wm8.jpeg' %}">
-              <img class="img-iPhone margin-top margin-screen-800" src="{% static 'assets/img/wm9.gif' %}">
-              <img class="img-iPhone margin-top margin-screen-800" src="{% static 'assets/img/wm10.jpeg' %}">
-              <img class="img-iPhone margin-top margin-screen-800" src="{% static 'assets/img/wm11.jpeg' %}">
             
-            </figure>
+            <h4>卫生</h4>
+            <p>-从洗衣机厂家特别聘请专业清洁人员</p>
+            <p>-高效灭菌清洁维护</p>
+            <p>-洁净如新</p>
+              
+            <h4>服务</h4>
+            <p>-定期清洁服务</p>            
+            <p>-上门安装,维修服务</p>
+            <p>-大物件代洗家政服务</p>
+            <p>-在合同到期后,专人上门将洗衣机回收</p>
+            
+            <h4>设备</h4>
+            <p>优秀的洗衣机资源</p>
+            <p>-精选 小天鹅，美的，TCL，海尔 等大众品牌</p>
+            <p>-我们的洗衣机均收购于 学生宿舍</p>
+            <p>-每台洗衣机的容量均不低于5.5KG, 最适合家用及宿舍用</p>
+            <p>-使用时间低于两年</p>
+            <p>-经专业人士检测评估仍可长期正常运行（一般全自动洗衣机的寿命为10年）</p>
 
-          </div> <!-- /.col-md-5 -->
+          </div>
           
-        </div> <!-- /.row -->
+        </div>
 
-      </div> <!-- /.container -->
+      </div>
 
     </section> <!-- /.features-section -->
 
