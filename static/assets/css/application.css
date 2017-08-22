@@ -5983,7 +5983,7 @@ tbody.collapse.in {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 80px;
+  width: 77%;
   height: auto;
   margin-top: 20px;
   margin-bottom: 30px;
@@ -6327,6 +6327,17 @@ tbody.collapse.in {
 .dn{
   display: none;
 }
+
+.features-section{
+  background: transparent;
+  padding: 0;
+}
+
+#section-2{
+  padding: 100px 0;
+  background: #f3f4f5;
+}
+
 #section-3 {
   background: #fff;
   text-align: left;
@@ -6336,4 +6347,9 @@ tbody.collapse.in {
 }
 #section-3 h4 {
   text-align: center;
+}
+
+footer.text-center {
+  background: #f3f4f5;
+  padding-top: 10px;
 }
