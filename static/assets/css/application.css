@@ -6293,7 +6293,13 @@ tbody.collapse.in {
 }
 
 /* add by ouYong*/
-
+.row {
+  margin-left: 20px;
+  margin-right: 0;
+}
+h3#title-2{
+  text-align: center;
+}
 .chooseRoom>select{
   width: 25%;
   margin-bottom: 10px;
