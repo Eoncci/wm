@@ -6327,3 +6327,13 @@ tbody.collapse.in {
 .dn{
   display: none;
 }
+#section-3 {
+  background: #fff;
+  text-align: left;
+}
+#section-3 .row.col-features {
+  text-align: left;
+}
+#section-3 h4 {
+  text-align: center;
+}
