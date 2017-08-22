@@ -18,6 +18,9 @@ class Order(models.Model):
     wmid = models.CharField(max_length=15)
     status = models.CharField(max_length=45, default='init')
 
+    # def __str__(self):
+    #     return self.tel, self.status
+
     def to_dict(self):
         return dict([(attr, getattr(self, attr)) for attr in [f.name for f in self._meta.fields]])
 
@@ -29,6 +32,9 @@ class Userinfo(models.Model):
     tel = models.CharField(primary_key=True, max_length=15)
     name = models.CharField(max_length=45)
     address = models.CharField(max_length=750)
+
+    # def __str__(self):
+    #     return self.tel
 
     class Meta:
         db_table = 'userinfo'
