@@ -6,7 +6,7 @@ from .models import *
 class OrderAdmin(admin.ModelAdmin):
     list_display = ('tel', 'status', 'start', 'end', 'address')
     list_filter = ('tel', 'status', 'start', 'end')
-    search_fields = ('status', 'tel')
+    search_fields = ('status', 'tel__tel')
 
     @staticmethod
     def address(obj):
