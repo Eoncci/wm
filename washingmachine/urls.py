@@ -6,5 +6,6 @@ urlpatterns = [
     url(r'^order$', views.order, name='order'),
     url(r'^status$', views.status, name='status'),
     url(r'^wm_order$', views.wm_order, name='wm_order'),
-    url(r'^query$', views.query, name='query')
+    url(r'^query$', views.query, name='query'),
+    url(r'^generate_code', views.generate_code, name='generate_code')
 ]

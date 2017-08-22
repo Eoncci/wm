@@ -10,13 +10,26 @@ from __future__ import unicode_literals
 from django.db import models
 
 
+class UserInfo(models.Model):
+    tel = models.CharField(primary_key=True, max_length=15)
+    name = models.CharField(max_length=45)
+    address = models.CharField(max_length=750)
+
+    def __str__(self):
+        return self.tel
+
+    class Meta:
+        db_table = 'userinfo'
+
+
 class Order(models.Model):
     id = models.CharField(primary_key=True, max_length=45)
-    tel = models.CharField(max_length=15)
+    # tel = models.CharField(max_length=15)
+    tel = models.ForeignKey(UserInfo)
     start = models.CharField(max_length=45)
     end = models.CharField(max_length=45)
     wmid = models.CharField(max_length=15)
-    status = models.CharField(max_length=45)
+    status = models.CharField(max_length=45, default='init')
 
     def to_dict(self):
         return dict([(attr, getattr(self, attr)) for attr in [f.name for f in self._meta.fields]])
@@ -25,18 +38,19 @@ class Order(models.Model):
         db_table = 'order'
 
 
-class Userinfo(models.Model):
-    tel = models.CharField(primary_key=True, max_length=15)
-    name = models.CharField(max_length=45)
-    address = models.CharField(max_length=750)
-
-    class Meta:
-        db_table = 'userinfo'
-
-
 class Wm(models.Model):
     wmid = models.CharField(primary_key=True, max_length=15)
     status = models.CharField(max_length=45)
 
     class Meta:
         db_table = 'wm'
+
+
+class Code(models.Model):
+    tel = models.CharField(primary_key=True, max_length=15)
+    code = models.CharField(max_length=15)
+    result = models.CharField(max_length=150, null=True)
+    time = models.DateTimeField()
+
+    class Meta:
+        db_table = 'code'

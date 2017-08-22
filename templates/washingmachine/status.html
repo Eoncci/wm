@@ -49,7 +49,7 @@
             <h4 class="text-center">查询预约状态</h4>
 
             <div class="form-group getstatus">
-                <form action="query" method="post" id="statusform">
+                <form action="query" method="get" id="statusform">
                     {% csrf_token %}
                     <input type="text" name="tel" class="form-control" id="tel" placeholder="请输入电话号码查询">
                     <button type="submit" class="btn btn-danger">确定</button>

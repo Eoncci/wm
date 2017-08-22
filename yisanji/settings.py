@@ -22,10 +22,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '%qh!dhzgleq*+2!&^1^1y8qqe05nf8fz=0$fjwnapqny@f13^h'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+MESSAGE_URL='http://sh2.ipyy.com/smsJson.aspx?action=send&userid=eoncci' \
+            '&account=jlf60&password=ab1256022&mobile={0}&content={1}&sendTime=&extno='
 
-ALLOWED_HOSTS = ['139.199.189.124', '127.0.0.1']
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+
+ALLOWED_HOSTS = ['139.199.189.124', '127.0.0.1', 'www.yisanji.com']
 
 
 # Application definition
@@ -108,21 +112,24 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
+# LANGUAGE_CODE = 'en-us'
+#
+# TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'zh-hans'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
