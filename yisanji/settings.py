@@ -26,7 +26,7 @@ MESSAGE_URL='http://sh2.ipyy.com/smsJson.aspx?action=send&userid=eoncci' \
             '&account=jlf60&password=ab1256022&mobile={0}&content={1}&sendTime=&extno='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['139.199.189.124', '127.0.0.1', 'www.yisanji.com']
