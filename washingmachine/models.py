@@ -28,6 +28,8 @@ class Product(models.Model):
     should_pay = models.CharField(max_length=45, default='0', null=False)
     years = models.CharField(max_length=45, default='0', null=False)
 
+    def __str__(self):
+        return self.description
 
     class Meta:
         db_table = 'product'
@@ -49,7 +51,6 @@ class Order(models.Model):
 
     class Meta:
         db_table = 'order'
-
 
 
 class Wm(models.Model):

@@ -38,6 +38,12 @@ class OrderAdmin(admin.ModelAdmin):
 class UserInfoAdmin(admin.ModelAdmin):
     list_display = ('tel', 'name', 'address')
     list_editable = ('address',)
+
+
+@admin.register(Product)
+class UserInfoAdmin(admin.ModelAdmin):
+    list_display = ('id', 'description', 'years', 'should_pay')
+    list_editable = ('description', 'years', 'should_pay',)
 # admin.site.register(Order)
 # admin.site.register(Userinfo)
 # admin.site.register(Wm)
