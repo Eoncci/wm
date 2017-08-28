@@ -22,20 +22,34 @@ class UserInfo(models.Model):
         db_table = 'userinfo'
 
 
+class Product(models.Model):
+    id = models.IntegerField(primary_key=True)
+    description = models.CharField(max_length=45, default='', null=False)
+    should_pay = models.CharField(max_length=45, default='0', null=False)
+    years = models.CharField(max_length=45, default='0', null=False)
+
+
+    class Meta:
+        db_table = 'product'
+
+
 class Order(models.Model):
     id = models.CharField(primary_key=True, max_length=45)
-    # tel = models.CharField(max_length=15)
     tel = models.ForeignKey(UserInfo)
     start = models.CharField(max_length=45)
     end = models.CharField(max_length=45)
     wmid = models.CharField(max_length=15)
     status = models.CharField(max_length=45, default='init')
+    deposit = models.CharField(max_length=45, default='0')
+    product = models.ForeignKey(Product, default=0)
+    paid = models.CharField(max_length=45, default='0')
 
     def to_dict(self):
         return dict([(attr, getattr(self, attr)) for attr in [f.name for f in self._meta.fields]])
 
     class Meta:
         db_table = 'order'
+
 
 
 class Wm(models.Model):

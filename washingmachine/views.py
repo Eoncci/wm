@@ -50,12 +50,13 @@ def wm_order(request):
         u1 = UserInfo(tel=order_form.cleaned_data['tel'],
                       name=order_form.cleaned_data['name'],
                       address=order_form.cleaned_data['address'])
-
+        _product = Product.objects.get(id=int(order_form.cleaned_data['product']))
         _order = Order(id=uuid.uuid1(),
                        tel=u1,
                        start=datetime.datetime.now(),
                        end=datetime.datetime.now() + datetime.timedelta(
                            days=365*int(order_form.cleaned_data['product'])),
+                       product=_product,
                        wmid=1)
         u1.save()
         _order.save()
@@ -111,6 +112,7 @@ def query(request):
             _temp = Order.objects.get(tel=query_form.cleaned_data['tel'])
             final = _temp.to_dict()
             final['tel'] = final['tel'].tel
+            final['product'] = final['product'].id
             return HttpResponse(handle_result(data=final, _status=1, message=''))
         except models.ObjectDoesNotExist:
             return HttpResponse(handle_result(data={}, _status=0, message='tel not exit!'))

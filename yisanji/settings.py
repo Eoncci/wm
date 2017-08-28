@@ -26,7 +26,7 @@ MESSAGE_URL='http://sh2.ipyy.com/smsJson.aspx?action=send&userid=eoncci' \
             '&account=jlf60&password=ab1256022&mobile={0}&content={1}&sendTime=&extno='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = ['139.199.189.124', '127.0.0.1', 'www.yisanji.com']
@@ -129,7 +129,7 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
